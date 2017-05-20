@@ -55,10 +55,7 @@ public class AppBase extends AppCompatActivity {
         divisions.add("S7 SYSTEM PROGRAMMING");
         gridView = (GridView)findViewById(R.id.grid);
         basicFields.add("ATTENDANCE");
-        //basicFields.add("SCHEDULER");
-        //basicFields.add("NOTES");
         basicFields.add("PROFILE");
-        //basicFields.add("CGPA CALCULATOR");
         adapter = new gridAdapter(this,basicFields);
         gridView.setAdapter(adapter);
     }

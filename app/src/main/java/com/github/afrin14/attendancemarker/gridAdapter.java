@@ -90,49 +90,7 @@ public class gridAdapter extends BaseAdapter{
             anim.setRepeatCount(Animation.INFINITE);
             imageView.startAnimation(anim);
 
-        }    /*else if(names.get(position).toString().equals("SCHEDULER"))
-        {
-            imageView.setImageResource(R.drawable.ic_schedule);
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent launchinIntent = new Intent(activity, scheduler.class);
-                    activity.startActivity(launchinIntent);
-                }
-            });
-            Animation anim = new ScaleAnimation(
-                    0.95f, 1f, // Start and end values for the X axis scaling
-                    0.95f, 1f, // Start and end values for the Y axis scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f); // Pivot point of Y scaling
-            anim.setFillAfter(true); // Needed to keep the result of the animation
-            anim.setDuration(2000);
-            anim.setRepeatMode(Animation.INFINITE);
-            anim.setRepeatCount(Animation.INFINITE);
-            imageView.startAnimation(anim);
-
-        }else if(names.get(position).toString().equals("NOTES"))
-        {
-            imageView.setImageResource(R.drawable.ic_notes);
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent launchinIntent = new Intent(activity, noteActivity.class);
-                    activity.startActivity(launchinIntent);
-                }
-            });
-            Animation anim = new ScaleAnimation(
-                    0.95f, 1f, // Start and end values for the X axis scaling
-                    0.95f, 1f, // Start and end values for the Y axis scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f); // Pivot point of Y scaling
-            anim.setFillAfter(true); // Needed to keep the result of the animation
-            anim.setDuration(2000);
-            anim.setRepeatMode(Animation.INFINITE);
-            anim.setRepeatCount(Animation.INFINITE);
-            imageView.startAnimation(anim);
-
-        }   */else if(names.get(position).toString().equals("PROFILE"))
+        }    else if(names.get(position).toString().equals("PROFILE"))
         {
             imageView.setImageResource(R.drawable.ic_profile);
             v.setOnClickListener(new View.OnClickListener() {
@@ -153,29 +111,6 @@ public class gridAdapter extends BaseAdapter{
             anim.setRepeatCount(Animation.INFINITE);
             imageView.startAnimation(anim);
         }
-        /*
-        else if(names.get(position).toString().equals("CGPA CALCULATOR"))
-        {
-            imageView.setImageResource(R.drawable.ic_cgpa);
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent launchinIntent = new Intent(activity, cgpa_activity.class);
-                    activity.startActivity(launchinIntent);
-                }
-            });
-            Animation anim = new ScaleAnimation(
-                    0.95f, 1f, // Start and end values for the X axis scaling
-                    0.95f, 1f, // Start and end values for the Y axis scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
-                    Animation.RELATIVE_TO_SELF, 0.5f); // Pivot point of Y scaling
-            anim.setFillAfter(true); // Needed to keep the result of the animation
-            anim.setDuration(2000);
-            anim.setRepeatMode(Animation.INFINITE);
-            anim.setRepeatCount(Animation.INFINITE);
-            imageView.startAnimation(anim);
-        } */
-
         textView.setText(names.get(position).toString());
         return v;
     }
@@ -261,27 +196,4 @@ public class gridAdapter extends BaseAdapter{
         }
     }
 
-  /*  public static void makeNotification(String userIntrouble) {
-        Log.d("NOTIFICATION","Building..........");
-        Intent notificationIntent = new Intent(activity.getApplicationContext(), noteActivity.class);
-//        notificationIntent.putExtra(MainListAdapter.USER_EMAIL,userIntrouble);
-//        notificationIntent.putExtra(MainListAdapter.IS_EMERGENCY, true);
-        PendingIntent pIntent = PendingIntent.getActivity(activity, 0, notificationIntent,
-                0);
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity.getBaseContext());
-        Uri ring = Uri.parse(sharedPrefs.getString("Notification_Sound", Settings.System.DEFAULT_RINGTONE_URI.toString()));
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(activity.getBaseContext())
-                .setTicker("Ticker Title").setContentTitle("Notes Are Available For this subject")
-                .setSmallIcon(R.drawable.ic_notes)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(userIntrouble))
-                .setContentIntent(pIntent)
-                .setSound(ring);
-
-        Notification noti = builder.build();
-        noti.contentIntent = pIntent;
-        noti.flags = Notification.FLAG_AUTO_CANCEL;
-        NotificationManager notificationManager = (NotificationManager) activity.getSystemService(activity.NOTIFICATION_SERVICE);
-        notificationManager.notify(0, noti);
-    }  */
 }
